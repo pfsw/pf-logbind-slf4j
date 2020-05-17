@@ -1,0 +1,38 @@
+apply plugin: 'java'
+
+def includePath = project.pfswGradleIncludePath // usually specified in $GRADLE_USER_HOME/gradle.properties
+
+version = '1.0.0'
+archivesBaseName = "pf-logbind-slf4j"
+
+ext {
+  javaVersion = '1.6'
+  pfLoggingVersion = '3.1.0'
+  slf4jVersion = '1.7.30'
+  
+  javaModuleNameSuffix = 'logbind.slf4j'
+}
+
+apply from: "${includePath}/common/ext-variables.gradle"
+apply from: "${includePath}/common/repositories.gradle"
+apply from: "${includePath}/java/java-6-compile.gradle"
+apply from: "${includePath}/java/java-compatibility.gradle"
+apply from: "${includePath}/java/publishing-java-full.gradle"
+
+dependencies {
+  compileOnly group: group, name: 'pf-logging', version: pfLoggingVersion
+  compileOnly group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+  
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+  testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+  testCompile group: group, name: 'pf-logging', version: pfLoggingVersion
+  testRuntime group: 'org.slf4j', name: 'slf4j-simple', version: slf4jVersion
+}
+
+test {
+  systemProperty 'org.pfsw.logging.binding', 'SLF4J'
+}
+
+wrapper { gradleVersion = '6.3' }
+
+println "${project.name} ${project.version} (autoModuleName: ${autoModuleName})"
