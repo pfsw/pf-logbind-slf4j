@@ -3,7 +3,6 @@ package org.pfsw.logbind.slf4j;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.pfsw.logbind.slf4j.Slf4jLoggerAdapter;
 import org.pfsw.logbind.slf4j.testhelper.UnitTestHelper;
 import org.pfsw.logging.Logger;
 import org.pfsw.logging.Logger2;

@@ -1,6 +1,6 @@
 # Programmer's Friend Log Binding for SLF4J
 
-The Programmer's Friend (PF) libraries are all logging against their own logging API provided by component _pf-logging_.  
+The Programmer's Friend (PF) libraries are all logging against their own logging API provided by component *pf-logging*.  
 That has the advantage of not having a fixed dependency to any of the multiple logging frameworks in the Java world.
 
 However, when using PF libraries in any application, the logging of the PF libraries should be routed to loggers of the
@@ -9,7 +9,7 @@ logging framework the application is using.
 Therefore PF provides binding libraries for the most prominent logging frameworks.
 
 This component is providing the binding to the [Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org/).  
-It is compiled with __Java 6__.
+It is compiled with **Java 6**.
 
 ## Usage
 
@@ -26,27 +26,27 @@ org.pfsw.logging.LoggerFactoryProvider.setDefaultFactoryName("SLF4J")
 
 ## Dependency Management
 
-You can find this library in _Programmer's Friend_ maven repository ``http://pfsw.org/maven/repo/``
-or on _jcenter_.
+You can find this library in *Programmer's Friend* maven repository ``http://pfsw.org/maven/repo/``
+or on *jcenter*.
 
-The library itself has _runtime_ dependencies to __org.pfsw:pf-logging:3.1.0__ and __org.slf4j:slf4j-api:1.17.30__.
+The library itself has _runtime_ dependencies to **org.pfsw:pf-logging:3.1.0** and **org.slf4j:slf4j-api:1.17.30**.
 
 
 Include the library into your project:
 
-__Gradle:__
+**Gradle:**
 
 ```
-runtime group: 'org.pfsw', name: 'pf-logbind-slf4j', version: '1.0.0'
+runtime group: 'org.pfsw', name: 'pf-logbind-slf4j', version: '1.1.0'
 ```
 
-__Maven:__
+**Maven:**
 
 ```
 <dependency>
     <groupId>org.pfsw</groupId>
     <artifactId>pf-logbind-slf4j</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <scope>runtime</scope>
 </dependency>
 ```
