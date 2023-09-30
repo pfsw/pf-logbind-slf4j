@@ -5,7 +5,7 @@ RELEASE NOTES FOR PACKAGE PF-LogBind-SLF4J
 
 VERSION 1.2.0 (21/11/2022) - 4 Unit Tests, 97.8% Coverage
 
-* Upgraded to pf-logging 3.0.0
+* Upgraded to pf-logging 3.5.0
 * Upgraded to gradle 6.9
 
 -------------------------------------------------------------------------------
